@@ -3,7 +3,7 @@ import '../styles/App.css';
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import About from './About/About'
-import ContentFragment from './ContentFragment/ContentFragment'
+import Dashboard from './Dashboard/Dashboard'
 
 
 
@@ -13,12 +13,12 @@ class App extends Component {
     super(props);
 
     this.state = {
-      progress: 'content-fragment',
+      progress: 'dashboard',
     }
   }
 
-  showContentFragments(){
-    this.setState({progress:"content-fragment"})
+  showDashboard(){
+    this.setState({progress:"dashboard"})
   }
 
   showAbout(){
@@ -28,8 +28,8 @@ class App extends Component {
   PickView(props){
     let progress = this.state.progress;
 
-    if (progress === 'content-fragment'){
-      return <ContentFragment/>
+    if (progress === 'dashboard'){
+      return <Dashboard/>
     }
 
     if (progress === 'about'){
@@ -40,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-          <Header showContentFragments={this.showContentFragments.bind(this)} showAbout={this.showAbout.bind(this)}/>
+          <Header showDashboard={this.showDashboard.bind(this)} showAbout={this.showAbout.bind(this)}/>
 
           {this.PickView()} 
 

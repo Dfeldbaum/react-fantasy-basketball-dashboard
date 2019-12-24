@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ContentFragment extends Component {
+class Dashboard extends Component {
 
 	constructor(props) {
 		super(props);
@@ -35,16 +35,16 @@ class ContentFragment extends Component {
     let { isLoaded, items } = this.state  // access items from state in render()
 
     if (!isLoaded) {
-      return <div className="content-fragment">Loading...</div>;
+      return <div className="dashboard">Loading...</div>;
     }
 
     else {
       return (
-        <div className="content-fragment">
+        <div className="dashboard">
           <ul>
             {items.map(item => ( // loop each obj from api result 
                 <li key={item.modelTitle}>
-                  <div className="content-fragment__text-container">
+                  <div className="dashboard__text-container">
                     <p><span>Title:</span> {item.title}</p>
                     <p><span>Description:</span> {item.description}</p>
                     <p><span>Release Date:</span> 
@@ -56,8 +56,8 @@ class ContentFragment extends Component {
                     </p>
                   </div>
 
-                  <div className="content-fragment__img-container">
-                    <img src={"/../img" + item.image} alt="Content Fragment"/> 
+                  <div className="dashboard__img-container">
+                    <img src={"/../img" + item.image} alt="Dashboard"/> 
                   </div>
                 </li> 
             ))} 
@@ -68,4 +68,4 @@ class ContentFragment extends Component {
   }
 }
 
-export default ContentFragment;
+export default Dashboard;

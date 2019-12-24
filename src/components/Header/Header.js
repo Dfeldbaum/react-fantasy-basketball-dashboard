@@ -6,12 +6,12 @@ class Header extends Component {
       <div className="header">
         <div className="nav-wrapper">
           <ul className="nav-wrapper__list">
-            <li onClick={this.props.showContentFragments}>Content Fragments</li>
+            <li onClick={this.props.showDashboard}>Dashboard</li>
             <li onClick={this.props.showAbout}>About</li>
           </ul>
 
           <div className="nav-wrapper__name">
-            <h1 onClick={this.props.showContentFragments}>Content Fragments</h1>
+            <h1 onClick={this.props.showDashboard}>React Fantasy Basketball Dashboard</h1>
           </div>
         </div>
       </div>

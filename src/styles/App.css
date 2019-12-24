@@ -152,8 +152,10 @@ body, html {
       max-width: 100%;
       height: auto; }
 
-.content-fragment {
+.dashboard {
   color: #8a8a8a;
+  height: 100vh;
+  background: #48494a;
   font-family: "proxima-nova",sans-serif;
   font-size: 16px;
   padding: 165px 45px 0px 45px;
@@ -161,15 +163,15 @@ body, html {
   justify-content: center;
   align-items: center; }
   @media (min-width: 767px) {
-    .content-fragment {
+    .dashboard {
       padding: 125px 45px 0px 45px; } }
-  .content-fragment ul {
+  .dashboard ul {
     list-style-type: none; }
-  .content-fragment li:hover {
+  .dashboard li:hover {
     transform: scale(1.03);
     transition-duration: .25s;
     box-shadow: 0px 0px 46px 9px rgba(151, 147, 147, 0.25); }
-  .content-fragment li {
+  .dashboard li {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -178,22 +180,22 @@ body, html {
     padding: 10px;
     cursor: pointer; }
     @media (min-width: 767px) {
-      .content-fragment li {
+      .dashboard li {
         flex-direction: row; } }
-  .content-fragment span {
+  .dashboard span {
     font-weight: bold;
     margin-right: 5px; }
-  .content-fragment__text-container {
+  .dashboard__text-container {
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center; }
     @media (min-width: 767px) {
-      .content-fragment__text-container {
+      .dashboard__text-container {
         width: 80%;
         padding-left: 20px;
         padding-right: 20px; } }
-  .content-fragment__img-container {
+  .dashboard__img-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -201,14 +203,14 @@ body, html {
     align-items: center;
     margin-top: 20px; }
     @media (min-width: 767px) {
-      .content-fragment__img-container {
+      .dashboard__img-container {
         width: 20%;
         margin-top: 0px; } }
-    .content-fragment__img-container img {
+    .dashboard__img-container img {
       max-width: 100%;
       height: auto; }
 
-.content-fragments {
+.dashboards {
   width: 100%;
   height: 100vh;
   background-color: #D3D3D3; }
