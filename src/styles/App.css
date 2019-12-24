@@ -154,6 +154,8 @@ body, html {
 
 .dashboard {
   color: #8a8a8a;
+  height: 100vh;
+  background: #48494a;
   font-family: "proxima-nova",sans-serif;
   font-size: 16px;
   padding: 165px 45px 0px 45px;
@@ -207,8 +209,3 @@ body, html {
     .dashboard__img-container img {
       max-width: 100%;
       height: auto; }
-
-.dashboards {
-  width: 100%;
-  height: 100vh;
-  background-color: #D3D3D3; }
