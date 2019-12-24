@@ -5,7 +5,7 @@ class Footer extends Component {
     return (
       <div className="footer">
         <div className="footer__name-wrapper">
-          <p>&#169; 2019 David Feldbaum & Alex Lockhart</p>
+          <p>&#169; 2020 David Feldbaum & Alex Lockhart</p>
         </div>
       </div>
     );

@@ -11,7 +11,7 @@ class Header extends Component {
           </ul>
 
           <div className="nav-wrapper__name">
-            <h1 onClick={this.props.showDashboard}>React Fantasy Basketball Dashboard</h1>
+            <h1 onClick={this.props.showDashboard}>Fantasy Basketball Dashboard</h1>
           </div>
         </div>
       </div>
