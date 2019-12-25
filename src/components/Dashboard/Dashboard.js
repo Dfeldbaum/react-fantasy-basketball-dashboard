@@ -12,7 +12,7 @@ class Dashboard extends Component {
 	}
 
   componentDidMount() {
-    fetch('/bin/fragmentexamples/movies.json', {
+    fetch('http://api.fantasy.nfl.com/v1/players/stats?statType=seasonStats&season=2017&week=1&format=json', {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -43,21 +43,9 @@ class Dashboard extends Component {
         <div className="dashboard">
           <ul>
             {items.map(item => ( // loop each obj from api result 
-                <li key={item.modelTitle}>
+                <li key={item.height}>
                   <div className="dashboard__text-container">
-                    <p><span>Title:</span> {item.title}</p>
-                    <p><span>Description:</span> {item.description}</p>
-                    <p><span>Release Date:</span> 
-                      {new Intl.DateTimeFormat('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: '2-digit' 
-                        }).format(item.releaseDate)}                
-                    </p>
-                  </div>
-
-                  <div className="dashboard__img-container">
-                    <img src={"/../img" + item.image} alt="Dashboard"/> 
+                    <p><span>Title:</span> {item.height}</p>
                   </div>
                 </li> 
             ))} 
