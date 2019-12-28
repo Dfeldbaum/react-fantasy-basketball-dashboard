@@ -6,33 +6,49 @@ class Dashboard extends Component {
 		super(props);
 
 		this.state = {
-      items: [],
-      isLoaded: false,
+      pictures: [],
+      isLoaded: false
 		}
 	}
 
   componentDidMount() {
-    fetch('http://api.fantasy.nfl.com/v1/players/stats?statType=seasonStats&season=2017&week=1&format=json', {
+    fetch('https://randomuser.me/api/?results=500', {
       method: 'GET',
-      credentials: 'include',
+      // credentials: 'include',
       headers: {
         'Connection': 'Keep-Alive',
         'Accept': 'application/json',
-        'Authorization': 'Basic YWRtaW46YWRtaW4=',
+        // 'Authorization': 'Basic YWRtaW46YWRtaW4=',
         'Content-Type': 'application/json'
       }
     })
-      .then(res => res.json())  // res is result from api, convert to json format
-      .then(json => {  // take json and set json data to state.items
+      .then(results => results.json())  // results is result from api, convert to json format
+      
+      .then(data => {  // take json and set json data to state.items
+        let pictures = data.results.map((pic) => {
+          return(
+            <div key={pic.results}>
+              <img src={pic.picture.medium}/>
+            </div>
+          )
+        })    
+        
         this.setState({
           isLoaded: true,
-          items: json,
+          pictures: pictures
+          // items: json,
         })
+
+        console.log("state", this.state.pictures);
+        
       })
     }
 
   render() {
-    let { isLoaded, items } = this.state  // access items from state in render()
+
+    let { isLoaded } = this.state  // access items from state in render()
+    // let { isLoaded, items } = this.state  // access items from state in render()
+    // console.log(items, 'items')
 
     if (!isLoaded) {
       return <div className="dashboard">Loading...</div>;
@@ -41,15 +57,19 @@ class Dashboard extends Component {
     else {
       return (
         <div className="dashboard">
-          <ul>
+          {this.state.pictures}
+
+
+          {/* <ul>
             {items.map(item => ( // loop each obj from api result 
-                <li key={item.height}>
+                <li key={item.results}>
                   <div className="dashboard__text-container">
-                    <p><span>Title:</span> {item.height}</p>
+                    <p><span>Title:</span> {item.name}</p>
                   </div>
                 </li> 
             ))} 
-          </ul> 
+          </ul>  */}
+
         </div>
       )
     }
