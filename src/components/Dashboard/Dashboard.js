@@ -6,41 +6,49 @@ class Dashboard extends Component {
 		super(props);
 
 		this.state = {
-      pictures: [],
+      player: "Alex",
+      players: [],
       isLoaded: false
 		}
 	}
 
   componentDidMount() {
-    fetch('https://randomuser.me/api/?results=500', {
+    fetch('/leaders.json', {
       method: 'GET',
       // credentials: 'include',
       headers: {
-        'Connection': 'Keep-Alive',
-        'Accept': 'application/json',
+        // 'X-RapidAPI-Key': 'd38f506977msh57044326d575d02p1ee5e1jsn377b548ef3cd',
+        // 'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
+        // 'Access-Control-Allow-Origin': '*',
+        // 'api_key': '4ap85t9s5sqbxxna2zdqh7n5',
+        // 'Connection': 'Keep-Alive',
+        // 'Accept': 'application/json',
         // 'Authorization': 'Basic YWRtaW46YWRtaW4=',
-        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/json'
       }
     })
       .then(results => results.json())  // results is result from api, convert to json format
       
       .then(data => {  // take json and set json data to state.items
-        let pictures = data.results.map((pic) => {
-          return(
-            <div key={pic.results}>
-              <img src={pic.picture.medium}/>
-            </div>
-          )
-        })    
+        console.log(data, "data")
+        let player = data.categories[26].ranks[0].player.full_name
+        console.log(player, 'player')
+        
+        // let players = data.api.players.map((player) => {
+        //   console.log(player)
+        //   // return(
+        //   //   <div key={player.api}>
+        //   //     <img src={player.firstName}/>
+        //   //   </div>
+        //   // )
+        // })    
         
         this.setState({
           isLoaded: true,
-          pictures: pictures
-          // items: json,
+          player: player
         })
 
-        console.log("state", this.state.pictures);
-        
+        console.log(this.state.player, "player from state");
       })
     }
 
@@ -57,7 +65,13 @@ class Dashboard extends Component {
     else {
       return (
         <div className="dashboard">
-          {this.state.pictures}
+          {/* {this.state.pictures} */}
+          <div className="player">
+            <p className="">Category:</p>
+            <p className="">Points Per Game</p>
+            <p className="">{this.state.player}</p>
+          </div>
+          
 
 
           {/* <ul>
