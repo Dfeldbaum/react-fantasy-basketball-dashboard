@@ -155,16 +155,87 @@ body, html {
 .dashboard {
   color: #8a8a8a;
   height: 100vh;
-  background: #48494a;
+  background: #EDEEF0;
   font-family: "proxima-nova",sans-serif;
   font-size: 16px;
-  padding: 165px 45px 0px 45px;
+  padding-top: 25%;
+  padding-right: 10%;
+  padding-bottom: 0px;
+  padding-left: 10%;
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  align-items: flex-start;
+  justify-content: center; }
   @media (min-width: 767px) {
     .dashboard {
-      padding: 125px 45px 0px 45px; } }
+      padding-top: 150px;
+      padding-right: 10%;
+      padding-bottom: 0px;
+      padding-left: 10%; } }
+  .dashboard__cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px; }
+  .dashboard__card {
+    width: 30%;
+    padding: 12px;
+    background: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: black; }
+    .dashboard__card p {
+      color: black; }
+    .dashboard__card__header {
+      width: 100%;
+      border-bottom: 1px dotted #dcdddf;
+      padding-bottom: 15px; }
+    .dashboard__card__body--main {
+      width: 100%;
+      padding-top: 15px;
+      display: flex; }
+      .dashboard__card__body--main__rank {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; }
+        @media (min-width: 767px) {
+          .dashboard__card__body--main__rank {
+            width: 5%;
+            margin-top: 0px; } }
+      .dashboard__card__body--main__img {
+        margin-left: 10px;
+        background: red;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; }
+        @media (min-width: 767px) {
+          .dashboard__card__body--main__img {
+            width: 40%; } }
+        .dashboard__card__body--main__img img {
+          max-width: 100%;
+          height: auto; }
+      .dashboard__card__body--main__text--label {
+        padding-left: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; }
+      .dashboard__card__body--main__text {
+        padding-left: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end; }
+        @media (min-width: 767px) {
+          .dashboard__card__body--main__text {
+            width: 10%; } }
   .dashboard ul {
     list-style-type: none; }
   .dashboard li:hover {

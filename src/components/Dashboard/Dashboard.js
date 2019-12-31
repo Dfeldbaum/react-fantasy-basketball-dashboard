@@ -6,7 +6,7 @@ class Dashboard extends Component {
 		super(props);
 
 		this.state = {
-      player: "Alex",
+      pointsLabel: "",
       players: [],
       isLoaded: false
 		}
@@ -31,32 +31,35 @@ class Dashboard extends Component {
       
       .then(data => {  // take json and set json data to state.items
         console.log(data, "data")
-        let player = data.categories[26].ranks[0].player.full_name
-        console.log(player, 'player')
-        
-        // let players = data.api.players.map((player) => {
-        //   console.log(player)
-        //   // return(
-        //   //   <div key={player.api}>
-        //   //     <img src={player.firstName}/>
-        //   //   </div>
-        //   // )
-        // })    
-        
+        const points = data.categories[26].ranks[0].player.full_name
+        const fieldGoal = data.categories[26].ranks[0].player.full_name
+        const freeThrow = data.categories[26].ranks[0].player.full_name
+        const threePointMade = data.categories[26].ranks[0].player.full_name
+        const rebounds = data.categories[26].ranks[0].player.full_name
+        const assists = data.categories[26].ranks[0].player.full_name
+        const steals = data.categories[26].ranks[0].player.full_name
+        const blocks = data.categories[26].ranks[0].player.full_name
+        const pointsLabel = data.categories[26].ranks[0].player.full_name
+        const fieldGoalLabel = data.categories[26].ranks[0].player.full_name
+        const freeThrowLabel = data.categories[26].ranks[0].player.full_name
+        const threePointMadeLabel = data.categories[26].ranks[0].player.full_name
+        const reboundsLabel = data.categories[26].ranks[0].player.full_name
+        const assistsLabel = data.categories[26].ranks[0].player.full_name
+        const stealsLabel = data.categories[26].ranks[0].player.full_name
+        const blocksLabel = data.categories[26].ranks[0].player.full_name
+
         this.setState({
           isLoaded: true,
-          player: player
+          pointsLabel: pointsLabel
         })
 
-        console.log(this.state.player, "player from state");
+        console.log(this.state.points, "points from state");
       })
     }
 
   render() {
 
     let { isLoaded } = this.state  // access items from state in render()
-    // let { isLoaded, items } = this.state  // access items from state in render()
-    // console.log(items, 'items')
 
     if (!isLoaded) {
       return <div className="dashboard">Loading...</div>;
@@ -66,24 +69,79 @@ class Dashboard extends Component {
       return (
         <div className="dashboard">
           {/* {this.state.pictures} */}
-          <div className="player">
-            <p className="">Category:</p>
-            <p className="">Points Per Game</p>
-            <p className="">{this.state.player}</p>
+          <div className="dashboard__cards">
+
+
+            <div className="dashboard__card dashboard__points">
+              <div className="dashboard__card__header">
+                <p className="">POINTS PER GAME</p>
+              </div>
+
+              <div className="dashboard__card__body--main">
+                <div className="dashboard__card__body--main__rank">1</div>
+
+                <div className="dashboard__card__body--main__img">
+                  <img src="" alt=""/> 
+                </div>
+
+                <div className="dashboard__card__body--main__text--label">
+                    <p className="">{this.state.pointsLabel}</p>
+                </div>
+
+                <div className="dashboard__card__body--main__text">
+                    <p className="">37.5</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="dashboard__card dashboard__points">
+              <div className="dashboard__card__header">
+                <p className="">FIELD GOALS PER GAME</p>
+              </div>
+
+              <div className="dashboard__card__body--main">
+                <div className="dashboard__card__body--main__rank">1</div>
+
+                <div className="dashboard__card__body--main__img">
+                  <img src="" alt=""/> 
+                </div>
+
+                <div className="dashboard__card__body--main__text--label">
+                    <p className="">{this.state.pointsLabel}</p>
+                </div>
+
+                <div className="dashboard__card__body--main__text">
+                    <p className="">37.5</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div className="dashboard__card dashboard__points">
+              <div className="dashboard__card__header">
+                <p className="">FREE THROWS PER GAME</p>
+              </div>
+
+              <div className="dashboard__card__body--main">
+                <div className="dashboard__card__body--main__rank">1</div>
+
+                <div className="dashboard__card__body--main__img">
+                  <img src="" alt=""/> 
+                </div>
+
+                <div className="dashboard__card__body--main__text--label">
+                    <p className="">{this.state.pointsLabel}</p>
+                </div>
+
+                <div className="dashboard__card__body--main__text">
+                    <p className="">37.5</p>
+                </div>
+              </div>
+            </div>
+            
+
+
           </div>
-          
-
-
-          {/* <ul>
-            {items.map(item => ( // loop each obj from api result 
-                <li key={item.results}>
-                  <div className="dashboard__text-container">
-                    <p><span>Title:</span> {item.name}</p>
-                  </div>
-                </li> 
-            ))} 
-          </ul>  */}
-
         </div>
       )
     }

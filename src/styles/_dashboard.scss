@@ -1,16 +1,122 @@
 .dashboard {
     color: $gray;
     height: 100vh;
-    background: #48494a;
+    background: #EDEEF0;
     font-family: "proxima-nova",sans-serif;
     font-size: 16px;
-    padding: 165px 45px 0px 45px;
-    display: flex;
+    padding-top: 25%;
+    padding-right: 10%;
+    padding-bottom: 0px;
+    padding-left: 10%;
+    display: flex; 
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
 
     @media (min-width: $screen-sm) {
-        padding: 125px 45px 0px 45px;
+        padding-top: 150px;
+        padding-right: 10%;
+        padding-bottom: 0px;
+        padding-left: 10%;
+    }
+
+    &__cards {
+        width: 100%;
+        // height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center; 
+        max-width: 1400px;
+    }
+
+    &__card {
+        width: 30%;
+        padding: 12px;
+        background: white;
+        border: 1px solid white;
+        border-radius: 10px;
+        color:  black;
+        
+        p {
+            color: black;
+        }
+
+        &__header {
+            width: 100%;
+            
+            border-bottom: 1px dotted #dcdddf;
+            padding-bottom: 15px;
+        }
+
+        &__body--main {
+            width: 100%;
+            padding-top: 15px;
+            display: flex;
+            // background: lightblue;
+
+            &__rank {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+        
+                @media (min-width: $screen-sm) {
+                    width: 5%;
+                    margin-top: 0px;
+                }  
+                
+            }
+
+            &__img {
+                margin-left: 10px;
+                background: red;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+        
+                @media (min-width: $screen-sm) {
+                    width: 40%;
+                }   
+        
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+                
+            }
+
+            &__text--label {
+                padding-left: 10px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+        
+                @media (min-width: $screen-sm) {
+                    // width: 30%;
+                } 
+                
+            }
+
+            &__text {
+                padding-left: 10px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+        
+                @media (min-width: $screen-sm) {
+                    width: 10%;
+                } 
+                // display: flex;
+            }
+            
+        }
     }
 
     ul {
