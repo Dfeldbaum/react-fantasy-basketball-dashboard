@@ -26,13 +26,15 @@ body, html {
   width: 100%;
   position: fixed;
   top: 0;
-  padding: 40px;
+  padding: 30px;
   border-bottom: 10px solid #ff9000;
   background-color: white; }
   .header .nav-wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center; }
+    flex-direction: column; }
+    @media (max-width: 766px) {
+      .header .nav-wrapper {
+        align-items: center; } }
     @media (min-width: 767px) {
       .header .nav-wrapper {
         flex-direction: row; } }
@@ -77,17 +79,17 @@ body, html {
     .header .nav-wrapper__name h1 {
       font-family: "proxima-nova",sans-serif;
       font-weight: 800;
-      font-size: 28px;
+      font-size: 23px;
       letter-spacing: 2px;
       text-transform: uppercase;
       cursor: pointer; }
       @media (max-width: 361px) {
         .header .nav-wrapper__name h1 {
-          font-size: 23px; } }
+          font-size: 20px; } }
 
 .footer {
   width: 100%;
-  padding: 30px 45px 30px;
+  padding: 15px 45px 15px;
   background-color: white;
   display: flex;
   flex-direction: column; }
@@ -155,7 +157,7 @@ body, html {
 
 .dashboard {
   color: #8a8a8a;
-  height: 100vh;
+  height: 100%;
   background: #EDEEF0;
   font-family: "proxima-nova",sans-serif;
   font-size: 16px;
@@ -164,70 +166,76 @@ body, html {
   padding-bottom: 0px;
   padding-left: 10%;
   display: flex;
-  align-items: flex-start;
-  justify-content: center; }
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; }
   @media (min-width: 767px) {
     .dashboard {
-      padding-top: 150px;
+      padding-top: 135px;
       padding-right: 10%;
-      padding-bottom: 0px;
+      padding-bottom: 135px;
       padding-left: 10%; } }
   .dashboard__cards {
     width: 100%;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     max-width: 1400px; }
+    @media (min-width: 767px) {
+      .dashboard__cards {
+        flex-direction: row; } }
   .dashboard__card {
     width: 30%;
     padding: 12px;
     background: white;
     border: 1px solid white;
     border-radius: 10px;
-    color: black; }
+    color: black;
+    margin-bottom: 40px; }
     .dashboard__card p {
       color: black; }
     .dashboard__card__header {
       width: 100%;
       border-bottom: 1px dotted #dcdddf;
-      padding-bottom: 15px; }
-    .dashboard__card__body--main {
+      padding-bottom: 12px; }
+    .dashboard__card__body {
       width: 100%;
-      padding-top: 15px;
+      padding-top: 12px;
       display: flex; }
-      .dashboard__card__body--main__rank {
+      .dashboard__card__body__rank {
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start; }
         @media (min-width: 767px) {
-          .dashboard__card__body--main__rank {
+          .dashboard__card__body__rank {
             width: 5%;
             margin-top: 0px; } }
-      .dashboard__card__body--main__img {
+      .dashboard__card__body__img {
         margin-left: 10px;
-        background: red;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start; }
         @media (min-width: 767px) {
-          .dashboard__card__body--main__img {
+          .dashboard__card__body__img {
             width: 40%; } }
-        .dashboard__card__body--main__img img {
+        .dashboard__card__body__img img {
           max-width: 100%;
           height: auto; }
-      .dashboard__card__body--main__text--label {
+      .dashboard__card__body__name {
         padding-left: 10px;
+        padding-right: 10px;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start; }
-      .dashboard__card__body--main__text {
+      .dashboard__card__body__value {
         padding-left: 10px;
         width: 100%;
         display: flex;
@@ -235,8 +243,16 @@ body, html {
         justify-content: center;
         align-items: flex-end; }
         @media (min-width: 767px) {
-          .dashboard__card__body--main__text {
+          .dashboard__card__body__value {
             width: 10%; } }
+  .dashboard__btn {
+    background: white;
+    padding: 5px 10px;
+    color: black;
+    font-size: 16px;
+    border: 1px solid white;
+    font-family: "proxima-nova",sans-serif;
+    text-transform: uppercase; }
   .dashboard ul {
     list-style-type: none; }
   .dashboard li:hover {

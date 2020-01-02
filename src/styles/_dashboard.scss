@@ -1,6 +1,6 @@
 .dashboard {
     color: $gray;
-    height: 100vh;
+    height: 100%;
     background: #EDEEF0;
     font-family: "proxima-nova",sans-serif;
     font-size: 16px;
@@ -9,13 +9,14 @@
     padding-bottom: 0px;
     padding-left: 10%;
     display: flex; 
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
     @media (min-width: $screen-sm) {
-        padding-top: 150px;
+        padding-top: 135px;
         padding-right: 10%;
-        padding-bottom: 0px;
+        padding-bottom: 135px;
         padding-left: 10%;
     }
 
@@ -23,10 +24,15 @@
         width: 100%;
         // height: 100%;
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center; 
         max-width: 1400px;
+
+        @media (min-width: $screen-sm) {
+            flex-direction: row;
+        }  
     }
 
     &__card {
@@ -36,6 +42,7 @@
         border: 1px solid white;
         border-radius: 10px;
         color:  black;
+        margin-bottom: 40px;
         
         p {
             color: black;
@@ -43,14 +50,13 @@
 
         &__header {
             width: 100%;
-            
             border-bottom: 1px dotted #dcdddf;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
-        &__body--main {
+        &__body {
             width: 100%;
-            padding-top: 15px;
+            padding-top: 12px;
             display: flex;
             // background: lightblue;
 
@@ -70,7 +76,7 @@
 
             &__img {
                 margin-left: 10px;
-                background: red;
+                // background: red;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -88,8 +94,9 @@
                 
             }
 
-            &__text--label {
+            &__name {
                 padding-left: 10px;
+                padding-right: 10px;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -102,7 +109,7 @@
                 
             }
 
-            &__text {
+            &__value {
                 padding-left: 10px;
                 width: 100%;
                 display: flex;
@@ -117,6 +124,17 @@
             }
             
         }
+    }
+
+    &__btn {
+        background: white;
+        padding: 5px 10px;
+        color: black;
+        font-size: 16px;
+        border: 1px solid white;
+        font-family: "proxima-nova",sans-serif;
+        text-transform: uppercase;
+        // margin-top: -10px;
     }
 
     ul {
