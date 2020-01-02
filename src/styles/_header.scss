@@ -69,12 +69,10 @@
     }
 
     &__name {
-
       @media(min-width: $screen-sm) {
         position: absolute;
         right: 45px;
       }
-
 
       h1 {
         @media(max-width: 361px) {
