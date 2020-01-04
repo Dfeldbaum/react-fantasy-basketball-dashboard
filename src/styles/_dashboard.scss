@@ -36,13 +36,17 @@
     }
 
     &__card {
-        width: 30%;
+        width: 100%;
         padding: 12px;
         background: white;
         border: 1px solid white;
         border-radius: 10px;
         color:  black;
         margin-bottom: 40px;
+
+        @media (min-width: $screen-sm) {
+            width: 30%;
+        }  
         
         p {
             color: black;
