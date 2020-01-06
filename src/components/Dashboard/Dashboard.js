@@ -109,8 +109,25 @@ class Dashboard extends Component {
     else {
       return (
         <div className="dashboard">
-          <div className="dashboard__cards">
+
+          <div className="dashboard__nav">
+            <div className="dashboard__nav__header">
+                <p className="">CHOOSE A PLAYER STAT</p>
+            </div>
+
+            <div className="dashboard__nav__body">
+              <p className="dashboard__nav__body__item">POINTS PER GAME</p>
+              <p className="dashboard__nav__body__item">FIELD GOALS PER GAME</p>
+              <p className="dashboard__nav__body__item">FREE THROWS PER GAME</p>
+              <p className="dashboard__nav__body__item">POINTS PER GAME</p>
+              <p className="dashboard__nav__body__item">FIELD GOALS PER GAME</p>
+              <p className="dashboard__nav__body__item">FREE THROWS PER GAME</p>
+            </div>            
+          </div>
+
+          <div className="dashboard__cards-and-btn">
             {/* Individual Cards */}
+            <div className="dashboard__cards">
             <div className="dashboard__card points">
               <div className="dashboard__card__header">
                 <p className="">POINTS PER GAME</p>
@@ -268,9 +285,8 @@ class Dashboard extends Component {
             </div>
             {/* E Individual Cards */}
           </div>
-          {/* E Cards Container */} 
-            
-          {otherCardsShown ? <button className="dashboard__btn" onClick={this.showOtherCards}>Load More</button> : 
+
+                    {otherCardsShown ? <button className="dashboard__btn" onClick={this.showOtherCards}>Load More</button> : 
             <div className="dashboard__cards">
               <div className="dashboard__card points">
                 <div className="dashboard__card__header">
@@ -429,6 +445,10 @@ class Dashboard extends Component {
               </div>
             </div>
           }
+          </div>
+          {/* E Cards Container */} 
+            
+
         </div>
       )    
     }
