@@ -2,7 +2,10 @@
   width: 100%;
   position: fixed;
   top: 0;
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 5%;
+  padding-right: 5%;
   border-bottom: 10px solid #ff9000;
   background-color: white;
 
@@ -71,7 +74,7 @@
     &__name {
       @media(min-width: $screen-sm) {
         position: absolute;
-        right: 45px;
+        right: 77px;
       }
 
       h1 {

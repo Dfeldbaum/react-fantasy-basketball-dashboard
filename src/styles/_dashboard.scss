@@ -9,50 +9,98 @@
     padding-bottom: 0px;
     padding-left: 10%;
     display: flex; 
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
 
     @media (min-width: $screen-sm) {
         padding-top: 135px;
-        padding-right: 10%;
+        padding-right: 5%;
         padding-bottom: 50px;
-        padding-left: 10%;
+        padding-left: 5%;
     }
 
-    &__cards {
-        width: 100%;
+    &__nav {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 20%;
+        height: 542px;
+        padding: 12px;
+        background: white;
+        border: 1px solid white;
+        border-radius: 10px;
+        color:  black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 50px;
+
+        &__header {
+            font-family: "proxima-nova",sans-serif;
+            font-weight: 600;
+            font-size: 17px;
+            width: 100%;
+            color: black;
+            border-bottom: 1px dotted #dcdddf;
+            padding-bottom: 12px;
+        }
+
+        &__body {
+            padding-top: 12px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            &__item {
+                margin-bottom: 12px;
+            }
+        }
+
+    
+    
+    }
+
+    &__cards-and-btn {
+        width: 80%;
         // height: 100%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center; 
-        max-width: 1400px;
+    }
+
+    &__cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center; 
 
         @media (min-width: $screen-sm) {
             flex-direction: row;
         }  
     }
+    
 
     &__card {
-        width: 100%;
+        width: 30%;
         padding: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         background: white;
         border: 1px solid white;
         border-radius: 10px;
         color:  black;
         margin-bottom: 40px;
 
-        @media (min-width: $screen-sm) {
-            width: 30%;
-        }  
-        
-        p {
-            color: black;
-        }
-
         &__header {
+            font-family: "proxima-nova",sans-serif;
+            font-weight: 600;
+            font-size: 17px;
+            color: black;
             width: 100%;
             border-bottom: 1px dotted #dcdddf;
             padding-bottom: 12px;
@@ -132,7 +180,10 @@
 
     &__btn {
         background: white;
-        padding: 5px 10px;
+        padding: 10px 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        font-family: "proxima-nova",sans-serif;
+        font-weight: 600;
         color: black;
         font-size: 18px;
         border: 1px solid white;
