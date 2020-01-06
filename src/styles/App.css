@@ -92,6 +92,7 @@ body, html {
           font-size: 20px; } }
 
 .footer {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   padding: 15px 45px 15px;
   background-color: white;
@@ -179,8 +180,9 @@ body, html {
       padding-bottom: 50px;
       padding-left: 5%; } }
   .dashboard__nav {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 20%;
-    height: 483px;
+    height: 542px;
     padding: 12px;
     background: white;
     border: 1px solid white;
@@ -229,6 +231,7 @@ body, html {
   .dashboard__card {
     width: 30%;
     padding: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     background: white;
     border: 1px solid white;
     border-radius: 10px;
@@ -289,7 +292,8 @@ body, html {
             width: 10%; } }
   .dashboard__btn {
     background: white;
-    padding: 5px 10px;
+    padding: 10px 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     font-family: "proxima-nova",sans-serif;
     font-weight: 600;
     color: black;

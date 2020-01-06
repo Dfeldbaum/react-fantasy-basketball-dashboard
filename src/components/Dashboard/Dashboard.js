@@ -109,7 +109,6 @@ class Dashboard extends Component {
     else {
       return (
         <div className="dashboard">
-
           <div className="dashboard__nav">
             <div className="dashboard__nav__header">
                 <p className="">CHOOSE A PLAYER STAT</p>
@@ -128,165 +127,165 @@ class Dashboard extends Component {
           <div className="dashboard__cards-and-btn">
             {/* Individual Cards */}
             <div className="dashboard__cards">
-            <div className="dashboard__card points">
-              <div className="dashboard__card__header">
-                <p className="">POINTS PER GAME</p>
-              </div>
-              <div className="dashboard__card__body dashboard__card__body--top">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.points}</p></div>
+              <div className="dashboard__card points">
+                <div className="dashboard__card__header">
+                  <p className="">POINTS PER GAME</p>
+                </div>
+                <div className="dashboard__card__body dashboard__card__body--top">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.points}</p></div>
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">2</div>
+                  <div className="dashboard__card__body__img"><img src="/img/antetokounmpo.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel2}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.points2}</p></div>                
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">3</div>
+                  <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel3}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.points3}</p></div>                
+                </div>
               </div>
 
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">2</div>
-                <div className="dashboard__card__body__img"><img src="/img/antetokounmpo.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel2}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.points2}</p></div>                
+              <div className="dashboard__card field-goals">
+                <div className="dashboard__card__header">
+                  <p className="">FIELD GOALS PER GAME</p>
+                </div>
+                <div className="dashboard__card__body dashboard__card__body--top">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/antetokounmpo.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal}</p></div>
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel2}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal2}</p></div>
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/james.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel3}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal3}</p></div>
+                </div>
               </div>
 
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">3</div>
-                <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel3}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.points3}</p></div>                
+              <div className="dashboard__card free-throws">
+                <div className="dashboard__card__header">
+                  <p className="">FREE THROWS PER GAME</p>
+                </div>
+                <div className="dashboard__card__body dashboard__card__body--top">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow}</p></div>
+                </div>
+                
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">2</div>
+                  <div className="dashboard__card__body__img"><img src="/img/butler.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel2}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow2}</p></div>
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">2</div>
+                  <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel3}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow3}</p></div>
+                </div>
               </div>
+
+              <div className="dashboard__card points">
+                <div className="dashboard__card__header">
+                  <p className="">POINTS PER GAME</p>
+                </div>
+                <div className="dashboard__card__body dashboard__card__body--top">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.points}</p></div>
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">2</div>
+                  <div className="dashboard__card__body__img"><img src="/img/antetokounmpo.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel2}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.points2}</p></div>                
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">3</div>
+                  <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel3}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.points3}</p></div>                
+                </div>
+              </div>
+
+              <div className="dashboard__card field-goals">
+                <div className="dashboard__card__header">
+                  <p className="">FIELD GOALS PER GAME</p>
+                </div>
+                <div className="dashboard__card__body dashboard__card__body--top">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/antetokounmpo.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal}</p></div>
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel2}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal2}</p></div>
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/james.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel3}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal3}</p></div>
+                </div>
+              </div>
+
+              <div className="dashboard__card free-throws">
+                <div className="dashboard__card__header">
+                  <p className="">FREE THROWS PER GAME</p>
+                </div>
+                <div className="dashboard__card__body dashboard__card__body--top">
+                  <div className="dashboard__card__body__rank">1</div>
+                  <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow}</p></div>
+                </div>
+                
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">2</div>
+                  <div className="dashboard__card__body__img"><img src="/img/butler.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel2}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow2}</p></div>
+                </div>
+
+                <div className="dashboard__card__body dashboard__card__body--next">
+                  <div className="dashboard__card__body__rank">2</div>
+                  <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
+                  <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel3}</p></div>
+                  <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow3}</p></div>
+                </div>
+              </div>
+              {/* E Individual Cards */}
             </div>
 
-            <div className="dashboard__card field-goals">
-              <div className="dashboard__card__header">
-                <p className="">FIELD GOALS PER GAME</p>
-              </div>
-              <div className="dashboard__card__body dashboard__card__body--top">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/antetokounmpo.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal}</p></div>
-              </div>
-
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel2}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal2}</p></div>
-              </div>
-
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/james.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel3}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal3}</p></div>
-              </div>
-            </div>
-
-            <div className="dashboard__card free-throws">
-              <div className="dashboard__card__header">
-                <p className="">FREE THROWS PER GAME</p>
-              </div>
-              <div className="dashboard__card__body dashboard__card__body--top">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow}</p></div>
-              </div>
-              
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">2</div>
-                <div className="dashboard__card__body__img"><img src="/img/butler.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel2}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow2}</p></div>
-              </div>
-
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">2</div>
-                <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel3}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow3}</p></div>
-              </div>
-            </div>
-
-            <div className="dashboard__card points">
-              <div className="dashboard__card__header">
-                <p className="">POINTS PER GAME</p>
-              </div>
-              <div className="dashboard__card__body dashboard__card__body--top">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.points}</p></div>
-              </div>
-
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">2</div>
-                <div className="dashboard__card__body__img"><img src="/img/antetokounmpo.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel2}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.points2}</p></div>                
-              </div>
-
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">3</div>
-                <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.pointsLabel3}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.points3}</p></div>                
-              </div>
-            </div>
-
-            <div className="dashboard__card field-goals">
-              <div className="dashboard__card__header">
-                <p className="">FIELD GOALS PER GAME</p>
-              </div>
-              <div className="dashboard__card__body dashboard__card__body--top">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/antetokounmpo.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal}</p></div>
-              </div>
-
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel2}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal2}</p></div>
-              </div>
-
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/james.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalLabel3}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal3}</p></div>
-              </div>
-            </div>
-
-            <div className="dashboard__card free-throws">
-              <div className="dashboard__card__header">
-                <p className="">FREE THROWS PER GAME</p>
-              </div>
-              <div className="dashboard__card__body dashboard__card__body--top">
-                <div className="dashboard__card__body__rank">1</div>
-                <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow}</p></div>
-              </div>
-              
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">2</div>
-                <div className="dashboard__card__body__img"><img src="/img/butler.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel2}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow2}</p></div>
-              </div>
-
-              <div className="dashboard__card__body dashboard__card__body--next">
-                <div className="dashboard__card__body__rank">2</div>
-                <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
-                <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowLabel3}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow3}</p></div>
-              </div>
-            </div>
-            {/* E Individual Cards */}
-          </div>
-
-                    {otherCardsShown ? <button className="dashboard__btn" onClick={this.showOtherCards}>Load More</button> : 
+            {otherCardsShown ? <button className="dashboard__btn" onClick={this.showOtherCards}>Load More</button> : 
             <div className="dashboard__cards">
               <div className="dashboard__card points">
                 <div className="dashboard__card__header">
