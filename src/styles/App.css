@@ -182,7 +182,7 @@ body, html {
   .dashboard__nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 20%;
-    height: 542px;
+    height: 100%;
     padding: 12px;
     background: white;
     border: 1px solid white;
@@ -196,7 +196,7 @@ body, html {
     .dashboard__nav__header {
       font-family: "proxima-nova",sans-serif;
       font-weight: 600;
-      font-size: 17px;
+      font-size: 16px;
       width: 100%;
       color: black;
       border-bottom: 1px dotted #dcdddf;
@@ -210,7 +210,8 @@ body, html {
       justify-content: flex-start;
       align-items: flex-start; }
       .dashboard__nav__body__item {
-        margin-bottom: 12px; }
+        margin-bottom: 12px;
+        font-size: 15px; }
   .dashboard__cards-and-btn {
     width: 80%;
     display: flex;
@@ -240,7 +241,6 @@ body, html {
     .dashboard__card__header {
       font-family: "proxima-nova",sans-serif;
       font-weight: 600;
-      font-size: 17px;
       color: black;
       width: 100%;
       border-bottom: 1px dotted #dcdddf;
@@ -277,6 +277,7 @@ body, html {
         padding-right: 10px;
         width: 100%;
         display: flex;
+        font-size: 15px;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start; }
@@ -295,7 +296,7 @@ body, html {
     padding: 10px 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     font-family: "proxima-nova",sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     color: black;
     font-size: 18px;
     border: 1px solid white;
