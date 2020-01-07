@@ -177,7 +177,7 @@ body, html {
     .dashboard {
       padding-top: 135px;
       padding-right: 5%;
-      padding-bottom: 50px;
+      padding-bottom: 200px;
       padding-left: 5%; } }
   .dashboard__nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -211,7 +211,10 @@ body, html {
       align-items: flex-start; }
       .dashboard__nav__body__item {
         margin-bottom: 12px;
-        font-size: 15px; }
+        font-size: 15px;
+        cursor: pointer; }
+        .dashboard__nav__body__item:hover, .dashboard__nav__body__item:active {
+          text-decoration: underline; }
   .dashboard__cards-and-btn {
     width: 80%;
     display: flex;
@@ -230,7 +233,7 @@ body, html {
       .dashboard__cards {
         flex-direction: row; } }
   .dashboard__card {
-    width: 30%;
+    width: 31%;
     padding: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     background: white;

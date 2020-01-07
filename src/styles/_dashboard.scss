@@ -15,7 +15,7 @@
     @media (min-width: $screen-sm) {
         padding-top: 135px;
         padding-right: 5%;
-        padding-bottom: 50px;
+        padding-bottom: 200px;
         padding-left: 5%;
     }
 
@@ -56,11 +56,13 @@
             &__item {
                 margin-bottom: 12px;
                 font-size: 15px;
+                cursor: pointer;
+
+                &:hover, &:active, {
+                    text-decoration: underline;
+                } 
             }
         }
-
-    
-    
     }
 
     &__cards-and-btn {
@@ -88,7 +90,7 @@
     
 
     &__card {
-        width: 30%;
+        width: 31%;
         padding: 12px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         background: white;

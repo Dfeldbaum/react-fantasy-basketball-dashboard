@@ -18,15 +18,92 @@ class Dashboard extends Component {
     }
     
     this.showOtherCards = this.showOtherCards.bind(this);
+    this.scrollToOffRebs = this.scrollToOffRebs.bind(this);
+    this.scrollToDefRebs = this.scrollToDefRebs.bind(this);
+    this.scrollToAssists = this.scrollToAssists.bind(this);
+    this.scrollToSteals = this.scrollToSteals.bind(this);
+    this.scrollToBlocks = this.scrollToBlocks.bind(this);
+    this.scrollToTurnovers = this.scrollToTurnovers.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
   }
   
   showOtherCards() {
     const { otherCardsShown } = this.state;
     this.setState({otherCardsShown: !otherCardsShown});
-    console.log("function works") 
+  }
+
+  scrollToOffRebs() {
+    let element = document.querySelector('.off-rebounds');
+    let bodyRect = document.body.getBoundingClientRect().top;
+    let elementRect = element.getBoundingClientRect().top;
+    let elementPosition = elementRect - bodyRect;
+    let offset = 120;
+    let offsetPosition = elementPosition - offset;
+
+    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
+  };
+
+  scrollToDefRebs() {
+    let element = document.querySelector('.def-rebounds');
+    let bodyRect = document.body.getBoundingClientRect().top;
+    let elementRect = element.getBoundingClientRect().top;
+    let elementPosition = elementRect - bodyRect;
+    let offset = 120;
+    let offsetPosition = elementPosition - offset;
+
+    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
+  };
+
+  scrollToAssists() {
+    let element = document.querySelector('.assists');
+    let bodyRect = document.body.getBoundingClientRect().top;
+    let elementRect = element.getBoundingClientRect().top;
+    let elementPosition = elementRect - bodyRect;
+    let offset = 120;
+    let offsetPosition = elementPosition - offset;
+
+    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
+  };
+
+  scrollToSteals() {
+    let element = document.querySelector('.steals');
+    let bodyRect = document.body.getBoundingClientRect().top;
+    let elementRect = element.getBoundingClientRect().top;
+    let elementPosition = elementRect - bodyRect;
+    let offset = 120;
+    let offsetPosition = elementPosition - offset;
+
+    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
+  };
+
+  scrollToBlocks() {
+    let element = document.querySelector('.blocks');
+    let bodyRect = document.body.getBoundingClientRect().top;
+    let elementRect = element.getBoundingClientRect().top;
+    let elementPosition = elementRect - bodyRect;
+    let offset = 120;
+    let offsetPosition = elementPosition - offset;
+
+    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
+  };
+
+  scrollToTurnovers() {
+    let element = document.querySelector('.turnovers');
+    let bodyRect = document.body.getBoundingClientRect().top;
+    let elementRect = element.getBoundingClientRect().top;
+    let elementPosition = elementRect - bodyRect;
+    let offset = 120;
+    let offsetPosition = elementPosition - offset;
+
+    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
+  };
+
+  scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   componentDidMount() {
+    this.scrollToTop();
     fetch('/leaders.json', {
       method: 'GET',
       // credentials: 'include',
@@ -166,7 +243,7 @@ class Dashboard extends Component {
           freeThrow2: freeThrow2,
           freeThrow3: freeThrow3,
           threePointMade: threePointMade,
-          threePointMade: threePointMade2,
+          threePointMade2: threePointMade2,
           threePointMade3: threePointMade3,
           threePointMade: threePointMade,
           threePointMade2: threePointMade2,
@@ -196,8 +273,6 @@ class Dashboard extends Component {
           turnovers2: turnovers2,
           turnovers3: turnovers3          
         })
-
-        console.log(this.state.points, "points from state");
       })
     }
 
@@ -218,12 +293,12 @@ class Dashboard extends Component {
             </div>
 
             <div className="dashboard__nav__body">
-              <p className="dashboard__nav__body__item">POINTS PER GAME</p>
-              <p className="dashboard__nav__body__item">FIELD GOALS PER GAME</p>
-              <p className="dashboard__nav__body__item">FREE THROWS PER GAME</p>
-              <p className="dashboard__nav__body__item">POINTS PER GAME</p>
-              <p className="dashboard__nav__body__item">FIELD GOALS PER GAME</p>
-              <p className="dashboard__nav__body__item">FREE THROWS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.scrollToOffRebs}>OFF REBOUNDS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.scrollToDefRebs}>DEF REBOUNDS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.scrollToAssists}>ASSISTS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.scrollToSteals}>STEALS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.scrollToBlocks}>BLOCKS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.scrollToTurnovers}>TURNOVERS PER GAME</p>
             </div>            
           </div>
 
@@ -388,7 +463,8 @@ class Dashboard extends Component {
               {/* E Individual Cards */}
             </div>
 
-            {otherCardsShown ? <button className="dashboard__btn" onClick={this.showOtherCards}>Load More</button> : 
+            {/* {otherCardsShown ? <button className="dashboard__btn" onClick={this.showOtherCards}>Load More</button> :  */}
+            {otherCardsShown ?  
             <div className="dashboard__cards">
               <div className="dashboard__card off-rebounds">
                 <div className="dashboard__card__header">
@@ -546,10 +622,12 @@ class Dashboard extends Component {
                 </div>
               </div>
             </div>
-          }
+          : ''}
           {/* E Alt Cards */} 
+
+          <button className="dashboard__btn" onClick={this.scrollToTop}>BACK TO TOP</button>
           </div>
-          {/* E Cards Container */} 
+          {/* E Cards and Button Container */} 
         </div>
       )    
     }
