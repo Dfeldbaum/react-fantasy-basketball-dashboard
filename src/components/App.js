@@ -29,7 +29,7 @@ class App extends Component {
     let progress = this.state.progress;
 
     if (progress === 'dashboard'){
-      return <Dashboard scrollToOffRebs={this.scrollToOffRebs.bind(this)} scrollToDefRebs={this.scrollToDefRebs.bind(this)} scrollToAssists={this.scrollToAssists.bind(this)} scrollToSteals={this.scrollToSteals.bind(this)} scrollToBlocks={this.scrollToBlocks.bind(this)} scrollToTurnovers={this.scrollToTurnovers.bind(this)}/>
+      return <Dashboard scrollToOffRebs={this.scrollToOffRebs.bind(this)} scrollToDefRebs={this.scrollToDefRebs.bind(this)} scrollToAssists={this.scrollToAssists.bind(this)} scrollToSteals={this.scrollToSteals.bind(this)} scrollToBlocks={this.scrollToBlocks.bind(this)} scrollToTurnovers={this.scrollToTurnovers.bind(this)} scrollToTop={this.scrollToTop.bind(this)}/>
     }
 
     if (progress === 'about'){

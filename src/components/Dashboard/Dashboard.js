@@ -491,7 +491,7 @@ class Dashboard extends Component {
               </div>
             </div>
             {/* E Cards */} 
-            <button className="dashboard__btn" onClick={this.scrollToTop}>BACK TO TOP</button>
+            <button className="dashboard__btn" onClick={this.props.scrollToTop}>BACK TO TOP</button>
           </div>
           {/* E Cards and Button Container */} 
         </div>
