@@ -3,120 +3,21 @@ import React, { Component } from 'react';
 class Dashboard extends Component {
 
 	constructor(props) {
-		super(props);
+    super(props);
+    
+    console.log(this.props)
 
 		this.state = {
-      pointsName: "",
-      fieldGoalName: "",
-      freeThrowName: "",
-      points: "",
-      fieldGoal: "",
-      freeThrow: "",
-      players: [],
       isLoaded: false,
       otherCardsShown: false
     }
-    
-    this.showOtherCards = this.showOtherCards.bind(this);
-    this.scrollToOffRebs = this.scrollToOffRebs.bind(this);
-    this.scrollToDefRebs = this.scrollToDefRebs.bind(this);
-    this.scrollToAssists = this.scrollToAssists.bind(this);
-    this.scrollToSteals = this.scrollToSteals.bind(this);
-    this.scrollToBlocks = this.scrollToBlocks.bind(this);
-    this.scrollToTurnovers = this.scrollToTurnovers.bind(this);
-    this.scrollToTop = this.scrollToTop.bind(this);
-  }
-  
-  showOtherCards() {
-    const { otherCardsShown } = this.state;
-    this.setState({otherCardsShown: !otherCardsShown});
-  }
-
-  scrollToOffRebs() {
-    let element = document.querySelector('.off-rebounds');
-    let bodyRect = document.body.getBoundingClientRect().top;
-    let elementRect = element.getBoundingClientRect().top;
-    let elementPosition = elementRect - bodyRect;
-    let offset = 120;
-    let offsetPosition = elementPosition - offset;
-
-    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
-  };
-
-  scrollToDefRebs() {
-    let element = document.querySelector('.def-rebounds');
-    let bodyRect = document.body.getBoundingClientRect().top;
-    let elementRect = element.getBoundingClientRect().top;
-    let elementPosition = elementRect - bodyRect;
-    let offset = 120;
-    let offsetPosition = elementPosition - offset;
-
-    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
-  };
-
-  scrollToAssists() {
-    let element = document.querySelector('.assists');
-    let bodyRect = document.body.getBoundingClientRect().top;
-    let elementRect = element.getBoundingClientRect().top;
-    let elementPosition = elementRect - bodyRect;
-    let offset = 120;
-    let offsetPosition = elementPosition - offset;
-
-    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
-  };
-
-  scrollToSteals() {
-    let element = document.querySelector('.steals');
-    let bodyRect = document.body.getBoundingClientRect().top;
-    let elementRect = element.getBoundingClientRect().top;
-    let elementPosition = elementRect - bodyRect;
-    let offset = 120;
-    let offsetPosition = elementPosition - offset;
-
-    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
-  };
-
-  scrollToBlocks() {
-    let element = document.querySelector('.blocks');
-    let bodyRect = document.body.getBoundingClientRect().top;
-    let elementRect = element.getBoundingClientRect().top;
-    let elementPosition = elementRect - bodyRect;
-    let offset = 120;
-    let offsetPosition = elementPosition - offset;
-
-    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
-  };
-
-  scrollToTurnovers() {
-    let element = document.querySelector('.turnovers');
-    let bodyRect = document.body.getBoundingClientRect().top;
-    let elementRect = element.getBoundingClientRect().top;
-    let elementPosition = elementRect - bodyRect;
-    let offset = 120;
-    let offsetPosition = elementPosition - offset;
-
-    window.scrollTo({top: offsetPosition, behavior: 'smooth'});
-  };
-
-  scrollToTop() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   componentDidMount() {
-    this.scrollToTop();
     fetch('/leaders.json', {
-      method: 'GET',
-      // credentials: 'include',
-      headers: {
-        // 'Access-Control-Allow-Origin': '*',
-        // 'Connection': 'Keep-Alive',
-        // 'Accept': 'application/json',
-        // 'Authorization': 'Basic YWRtaW46YWRtaW4=',
-        // 'Content-Type': 'application/json'
-      }
+      method: 'GET'
     })
-      .then(results => results.json())  // results is result from api, convert to json format
-      
+      .then(results => results.json()) 
       .then(data => {  // take json and set json data to state.items
         console.log(data, "data")
         const pointsName = data.categories[26].ranks[0].player.full_name
@@ -195,7 +96,6 @@ class Dashboard extends Component {
 
         this.setState({
           isLoaded: true,
-          otherCardsShown: true,
           pointsName: pointsName,
           pointsName2: pointsName2,
           pointsName3: pointsName3,
@@ -245,9 +145,6 @@ class Dashboard extends Component {
           threePointMade: threePointMade,
           threePointMade2: threePointMade2,
           threePointMade3: threePointMade3,
-          threePointMade: threePointMade,
-          threePointMade2: threePointMade2,
-          threePointMade3: threePointMade3,
           rebounds: rebounds,
           rebounds2: rebounds2,
           rebounds3: rebounds3,
@@ -277,8 +174,8 @@ class Dashboard extends Component {
     }
 
   render() {
-    const { isLoaded, otherCardsShown } = this.state  // access items from state in render()
-    console.log(this.state, "state man!")
+    const { isLoaded } = this.state  // access isLoaded bool from state in render()
+    console.log(this.state, "state obj")
 
     if (!isLoaded) {
       return <div className="dashboard">Loading...</div>;
@@ -293,12 +190,12 @@ class Dashboard extends Component {
             </div>
 
             <div className="dashboard__nav__body">
-              <p className="dashboard__nav__body__item" onClick={this.scrollToOffRebs}>OFF REBOUNDS PER GAME</p>
-              <p className="dashboard__nav__body__item" onClick={this.scrollToDefRebs}>DEF REBOUNDS PER GAME</p>
-              <p className="dashboard__nav__body__item" onClick={this.scrollToAssists}>ASSISTS PER GAME</p>
-              <p className="dashboard__nav__body__item" onClick={this.scrollToSteals}>STEALS PER GAME</p>
-              <p className="dashboard__nav__body__item" onClick={this.scrollToBlocks}>BLOCKS PER GAME</p>
-              <p className="dashboard__nav__body__item" onClick={this.scrollToTurnovers}>TURNOVERS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.props.scrollToOffRebs}>OFF REBOUNDS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.props.scrollToDefRebs}>DEF REBOUNDS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.props.scrollToAssists}>ASSISTS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.props.scrollToSteals}>STEALS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.props.scrollToBlocks}>BLOCKS PER GAME</p>
+              <p className="dashboard__nav__body__item" onClick={this.props.scrollToTurnovers}>TURNOVERS PER GAME</p>
             </div>            
           </div>
 
@@ -315,14 +212,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.pointsName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.points}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/antetokounmpo.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.pointsName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.points2}</p></div>                
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
@@ -341,14 +236,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.fieldGoalName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.fieldGoal2}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/james.png" alt=""/></div>
@@ -367,14 +260,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow}</p></div>
                 </div>
-                
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/butler.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.freeThrowName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.freeThrow2}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
@@ -393,14 +284,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.minutesName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.minutes}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/lillard.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.minutesName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.minutes2}</p></div>                
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/mccollum.png" alt=""/></div>
@@ -419,14 +308,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.threePointMadeName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.threePointMade}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/bertans.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.threePointMadeName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.points2}</p></div>                
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/graham.png" alt=""/></div>
@@ -445,14 +332,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.reboundsName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.rebounds}</p></div>
                 </div>
-                
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/capela.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.reboundsName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.rebounds2}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/gobert.png" alt=""/></div>
@@ -460,12 +345,7 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__value"><p className="">{this.state.rebounds3}</p></div>
                 </div>
               </div>
-              {/* E Individual Cards */}
-            </div>
 
-            {/* {otherCardsShown ? <button className="dashboard__btn" onClick={this.showOtherCards}>Load More</button> :  */}
-            {otherCardsShown ?  
-            <div className="dashboard__cards">
               <div className="dashboard__card off-rebounds">
                 <div className="dashboard__card__header">
                   <p className="">OFF REBOUNDS PER GAME</p>
@@ -476,14 +356,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.offReboundsName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.offRebounds}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/capela.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.offReboundsName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.offRebounds2}</p></div>                
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/thompson.png" alt=""/></div>
@@ -502,14 +380,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.defReboundsName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.defRebounds}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/gobert.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.defReboundsName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.defRebounds2}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/capela.png" alt=""/></div>
@@ -528,14 +404,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.assistsName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.assists}</p></div>
                 </div>
-                
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/rubio.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.assistsName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.assists2}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/doncic.png" alt=""/></div>
@@ -554,14 +428,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.stealsName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.steals}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/dunn.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.stealsName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.steals2}</p></div>                
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/vanvleet.png" alt=""/></div>
@@ -580,14 +452,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.blocksName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.blocks}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/isaac.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.blocksName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.blocks2}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/davis.png" alt=""/></div>
@@ -606,14 +476,12 @@ class Dashboard extends Component {
                   <div className="dashboard__card__body__name"><p className="">{this.state.turnoversName}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.turnovers}</p></div>
                 </div>
-                
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">2</div>
                   <div className="dashboard__card__body__img"><img src="/img/harden.png" alt=""/></div>
                   <div className="dashboard__card__body__name"><p className="">{this.state.turnoversName2}</p></div>
                   <div className="dashboard__card__body__value"><p className="">{this.state.turnovers2}</p></div>
                 </div>
-
                 <div className="dashboard__card__body dashboard__card__body--next">
                   <div className="dashboard__card__body__rank">3</div>
                   <div className="dashboard__card__body__img"><img src="/img/westbrook.png" alt=""/></div>
@@ -622,10 +490,8 @@ class Dashboard extends Component {
                 </div>
               </div>
             </div>
-          : ''}
-          {/* E Alt Cards */} 
-
-          <button className="dashboard__btn" onClick={this.scrollToTop}>BACK TO TOP</button>
+            {/* E Cards */} 
+            <button className="dashboard__btn" onClick={this.scrollToTop}>BACK TO TOP</button>
           </div>
           {/* E Cards and Button Container */} 
         </div>
