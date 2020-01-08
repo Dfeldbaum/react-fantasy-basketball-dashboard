@@ -4,9 +4,7 @@ class Dashboard extends Component {
 
 	constructor(props) {
     super(props);
-    
-    console.log(this.props)
-
+  
 		this.state = {
       isLoaded: false
     }
@@ -17,7 +15,7 @@ class Dashboard extends Component {
       method: 'GET'
     })
       .then(results => results.json()) 
-      .then(data => {  // take json and set json data to state.items
+      .then(data => {  // take json and set json data to state obj
         console.log(data, "data")
         const pointsName = data.categories[26].ranks[0].player.full_name
         const pointsName2 = data.categories[26].ranks[1].player.full_name
