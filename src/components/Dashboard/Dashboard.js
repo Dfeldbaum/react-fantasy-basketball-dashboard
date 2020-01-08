@@ -8,8 +8,7 @@ class Dashboard extends Component {
     console.log(this.props)
 
 		this.state = {
-      isLoaded: false,
-      otherCardsShown: false
+      isLoaded: false
     }
   }
 
