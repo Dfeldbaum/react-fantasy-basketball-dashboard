@@ -79,7 +79,7 @@ body, html {
     @media (min-width: 767px) {
       .header .nav-wrapper__name {
         position: absolute;
-        right: 77px; } }
+        right: 5%; } }
     .header .nav-wrapper__name h1 {
       font-family: "proxima-nova",sans-serif;
       font-weight: 800;
