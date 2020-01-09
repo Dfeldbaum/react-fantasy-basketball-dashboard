@@ -314,7 +314,7 @@ class Dashboard extends Component {
                 <div className="dashboard__card__body__rank">2</div>
                 <div className="dashboard__card__body__img"><img src="/img/bertans.png" alt=""/></div>
                 <div className="dashboard__card__body__name"><p className="">{this.state.threePointMadeName2}</p></div>
-                <div className="dashboard__card__body__value"><p className="">{this.state.points2}</p></div>                
+                <div className="dashboard__card__body__value"><p className="">{this.state.threePointMade2}</p></div>                
               </div>
               <div className="dashboard__card__body dashboard__card__body--next">
                 <div className="dashboard__card__body__rank">3</div>
