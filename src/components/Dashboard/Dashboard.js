@@ -6,9 +6,9 @@ class Dashboard extends Component {
 	constructor(props) {
     super(props);
 
-    // reference to the DOM node
+    // reference to el
     this.pointsDiv = null;
-    // reference to the animation
+    // animation timeline
     this.pointsTimeline = new TimelineLite({paused: true});
   
 		this.state = {

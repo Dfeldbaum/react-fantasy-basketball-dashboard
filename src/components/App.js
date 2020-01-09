@@ -5,8 +5,6 @@ import Footer from './Footer/Footer'
 import About from './About/About'
 import Dashboard from './Dashboard/Dashboard'
 
-
-
 class App extends Component {
 
   constructor(props) {
